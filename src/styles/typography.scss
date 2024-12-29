@@ -1,0 +1,10 @@
+@import "utils";
+
+@mixin Typography($font-size, $font-weight, $font-style, $line-height, $letter-spacing, $font-family) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  font-family: $font-family;
+}
