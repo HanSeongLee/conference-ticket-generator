@@ -1,7 +1,16 @@
 :root {
-	--color-black: #000000;
-	--color-white: #FFFFFF;
+	/* Neutral Colors */
+	--color-neutral-300: #FFFFFF;
+	--color-neutral-500: #D1D0D5;
+	--color-neutral-700: #8784A5;
+	--color-neutral-900: #4B4869;
+	--color-neutral-1000: #0D082D;
 
-	--color-primary: var(--color-black);
-	--color-primary-hover: var(--color-white);
+	/* Orange Colors */
+	--color-orange-500: #F57463;
+	--color-orange-700: #E1604F;
+
+	/* Semantic Colors */
+	--color-primary: var(--color-neutral-900);
+	--color-primary-hover: var(--color-orange-500);
 }
