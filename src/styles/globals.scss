@@ -5,10 +5,14 @@
 
 html,
 body {
+  @include text-preset-4;
+
   padding: 0;
   margin: 0;
   font-family: 'Inconsolata', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--color-neutral-300);
+  background-color: var(--color-neutral-900);
 }
 
 a {
