@@ -1,0 +1,13 @@
+@import "@/styles/utils";
+
+.logo {
+  display: flex;
+
+  svg {
+    height: 25px;
+
+    @include media(">tablet") {
+      height: 30px;
+    }
+  }
+}
