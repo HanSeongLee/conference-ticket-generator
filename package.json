@@ -52,6 +52,7 @@
     "@storybook/theming": "^8.4.5",
     "@types/node": "^20.8.7",
     "@types/react": "^18.2.29",
+    "chokidar": "^4.0.3",
     "chromatic": "^9.0.0",
     "commitizen": "^4.3.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
