@@ -1,4 +1,6 @@
-const { withSentryConfig } = require('@sentry/nextjs')
+const {withSentryConfig} = require('@sentry/nextjs');
+const generateColors = require('./scripts/generateColors');
+const generateTypographyTypes = require('./scripts/generateTypographyTypes');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -7,7 +9,12 @@ const nextConfig = {
         locales: ["en"],
         defaultLocale: "en",
     },
-    webpack(config) {
+    webpack(config, { isServer }) {
+        if (isServer) {
+            generateColors();
+            generateTypographyTypes();
+        }
+
         config.module.rules.push({
             test: /\.svg$/,
             use: ["@svgr/webpack"]
