@@ -2,6 +2,7 @@ import React from 'react';
 import '@/styles/globals.scss';
 import { Metadata, Viewport } from 'next';
 import { WEBSITE_DESCRIPTION, WEBSITE_OGI, WEBSITE_THEME_COLOR, WEBSITE_TITLE, WEBSITE_URL } from '@/constants/website';
+import Header from '@/components/layout/Header';
 
 export const metadata: Metadata = {
     title: WEBSITE_TITLE,
@@ -45,6 +46,7 @@ export default function RootLayout({
             />
         </head>
         <body>
+            <Header />
             {children}
         </body>
         </html>
