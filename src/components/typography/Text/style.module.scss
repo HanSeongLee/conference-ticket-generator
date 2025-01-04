@@ -1,0 +1,43 @@
+@import "@/styles/typography";
+
+.text {
+  color: var(--color, var(--color-neutral-300));
+
+  &.gradient {
+    background: var(--gradient, var(--color-gradient-001));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &.preset1 {
+    @include text-preset-1;
+  }
+
+  &.preset2 {
+    @include text-preset-2;
+  }
+
+  &.preset3 {
+    @include text-preset-3;
+  }
+
+  &.preset4 {
+    @include text-preset-4;
+  }
+
+  &.preset5 {
+    @include text-preset-5;
+  }
+
+  &.preset5ExtraBold {
+    @include text-preset-5-extra-bold;
+  }
+
+  &.preset6 {
+    @include text-preset-6;
+  }
+
+  &.preset7 {
+    @include text-preset-7;
+  }
+}
