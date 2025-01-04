@@ -8,6 +8,7 @@ export interface IBaseTextProps {
     preset?: TypographyPreset;
     color?: Color | string;
     gradient?: boolean;
+    align?: 'left' | 'center' | 'right';
 }
 
 interface ITextProps extends HTMLAttributes<HTMLSpanElement | HTMLParagraphElement | HTMLDivElement | HTMLHeadingElement>, IBaseTextProps {
@@ -16,7 +17,7 @@ interface ITextProps extends HTMLAttributes<HTMLSpanElement | HTMLParagraphEleme
 
 const Text: React.FC<ITextProps> = ({
                                         as = 'span', preset = 'text-preset-3', color = 'color-neutral-300', gradient = false,
-                                        className, children, ...props
+                                        align = 'left', className, children, ...props
                                     }) => {
     const presetClasses: Record<TypographyPreset, string> = {
         'text-preset-1': styles.preset1,
@@ -36,6 +37,7 @@ const Text: React.FC<ITextProps> = ({
         }, className),
         style: {
             '--color': color in colors ? colors[color as Color] : color,
+            '--align': align,
         } as React.CSSProperties,
         ...props,
     }, children);

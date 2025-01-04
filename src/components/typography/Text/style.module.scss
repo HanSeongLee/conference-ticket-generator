@@ -2,6 +2,7 @@
 
 .text {
   color: var(--color, var(--color-neutral-300));
+  text-align: var(--align, left);
 
   &.gradient {
     background: var(--gradient, var(--color-gradient-001));
