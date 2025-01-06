@@ -11,8 +11,11 @@ export interface IBaseTextProps {
     align?: 'left' | 'center' | 'right';
 }
 
-interface ITextProps extends HTMLAttributes<HTMLSpanElement | HTMLParagraphElement | HTMLDivElement | HTMLHeadingElement>, IBaseTextProps {
-    as?: 'span' | 'p' | 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+interface ITextProps extends HTMLAttributes<
+    HTMLSpanElement | HTMLParagraphElement | HTMLDivElement | HTMLHeadingElement |
+    HTMLLabelElement
+>, IBaseTextProps {
+    as?: 'span' | 'p' | 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label';
 }
 
 const Text: React.FC<ITextProps> = ({
