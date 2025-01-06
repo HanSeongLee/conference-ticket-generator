@@ -1,0 +1,18 @@
+@import "@/styles/utils";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 343px;
+  width: 100%;
+  margin: 0 auto;
+
+  @include media(">tablet") {
+    max-width: 705px;
+  }
+
+  @include media(">desktop") {
+    max-width: 892px;
+  }
+}
