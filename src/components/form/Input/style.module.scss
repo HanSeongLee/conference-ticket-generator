@@ -1,0 +1,36 @@
+@import "@/styles/utils";
+@import "@/styles/typography";
+
+.input {
+  @include text-preset-6;
+
+  width: 100%;
+  height: 54px;
+  color: var(--color-neutral-000);
+  backdrop-filter: blur(2.5px);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-12, 12px);
+  border: 1px solid var(--color-neutral-500);
+  padding: 0 var(--spacing-200, 16px);
+  caret-color: var(--color-neutral-300);
+  outline: none;
+
+  &::placeholder {
+    color: var(--color-neutral-300);
+  }
+
+  &:hover:not(:focus) {
+    @include hover-pointer-fine {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &:focus {
+    outline-offset: 3px;
+    outline: var(--color-neutral-500) solid 2px;
+  }
+
+  &.error {
+    border-color: var(--color-orange-500);
+  }
+}
