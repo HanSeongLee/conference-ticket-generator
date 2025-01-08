@@ -4,12 +4,14 @@ import styles from './style.module.scss';
 import CloudIcon from '@/assets/icons/icon-cloud.svg';
 import ErrorIcon from '@/assets/icons/icon-error.svg';
 import GithubIcon from '@/assets/icons/icon-github.svg';
+import SymbolIcon from '@/assets/icons/icon-symbol.svg';
 import { Color } from '@/types/colors';
 
 export enum IconName {
     CLOUD = 'cloud',
     ERROR = 'error',
     GITHUB = 'github',
+    SYMBOL = 'symbol',
 }
 
 interface IIconProps extends HTMLAttributes<HTMLSpanElement> {
@@ -23,6 +25,7 @@ const Icon: React.FC<IIconProps> = ({ iconName, size = 24, color, className, ...
         [IconName.CLOUD]: <CloudIcon />,
         [IconName.ERROR]: <ErrorIcon />,
         [IconName.GITHUB]: <GithubIcon />,
+        [IconName.SYMBOL]: <SymbolIcon />,
     };
 
     return (
