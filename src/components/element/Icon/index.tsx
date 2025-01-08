@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from 'react';
+import React, { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import cn from 'classnames';
 import styles from './style.module.scss';
 import CloudIcon from '@/assets/icons/icon-cloud.svg';
@@ -31,10 +31,10 @@ const Icon: React.FC<IIconProps> = ({ iconName, size = 24, color, className, ...
     return (
         <span className={cn(styles.icon, className)}
               style={{
-                  width: `${size}px`,
-                  height: `${size}px`,
+                  '--width': `${size}px`,
+                  '--height': `${size}px`,
                   color,
-              }}
+              } as CSSProperties}
               {...props}
         >
             {IconMap[iconName as IconName]}
