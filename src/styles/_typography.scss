@@ -26,10 +26,10 @@
 }
 
 @mixin text-preset-3 {
-  @include Typography(30px, 700, normal, 110%, -1px, 'Inconsolata');
+  @include Typography(30px, 500, normal, 110%, -1px, 'Inconsolata');
 
   @include media('<tablet') {
-    @include Typography(22px, 700, normal, 110%, -1px, 'Inconsolata');
+    @include Typography(22px, 500, normal, 110%, -1px, 'Inconsolata');
   }
 }
 
@@ -50,10 +50,10 @@
 }
 
 @mixin text-preset-6 {
-  @include Typography(18px, 500, normal, 120%, 0, 'Inconsolata');
+  @include Typography(18px, 400, normal, 120%, 0, 'Inconsolata');
 
   @include media('<tablet') {
-    @include Typography(14px, 500, normal, 120%, 0, 'Inconsolata');
+    @include Typography(14px, 400, normal, 120%, 0, 'Inconsolata');
   }
 }
 
