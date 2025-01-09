@@ -1,0 +1,90 @@
+@import "@/styles/utils";
+@import "@/styles/typography";
+
+.fileInput {
+  width: 100%;
+  height: 126px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-200);
+  background-color: rgba(255, 255, 255, 0.08);
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%238784A5FF' stroke-width='2' stroke-dasharray='5' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border: none;
+  border-radius: var(--radius-12, 12px);
+  backdrop-filter: blur(2.5px);
+  padding: var(--spacing-150) var(--spacing-200);
+  cursor: pointer;
+
+  &:hover:not(:focus), .isDragging {
+    @include hover-pointer-fine {
+      background-color: rgba(255, 255, 255, 0.2);
+
+      .iconBox {
+        border-color: var(--color-neutral-500);
+      }
+    }
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-neutral-500);
+    outline-offset: 3px;
+  }
+
+  .iconBox, .imagePreviewBox {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-orange-500);
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: var(--radius-12, 12px);
+    border: 1px solid var(--color-neutral-700);
+    box-shadow: 0 2px 4px -2px #040128;
+    overflow: hidden;
+
+    .imagePreview {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .imagePreviewBox {
+    border-color: var(--color-neutral-500);
+  }
+
+  .buttonContainer {
+    display: flex;
+    gap: var(--spacing-100);
+
+    .removeImageButton, .changeImageButton {
+      @include text-preset-7;
+
+      position: relative;
+      text-align: center;
+      color: var(--color-neutral-300);
+      background-color: rgba(255, 255, 255, 0.10);
+      padding: var(--spacing-050) var(--spacing-100);
+      border: none;
+      border-radius: var(--radius-4, 4px);
+      outline: none;
+      cursor: pointer;
+
+      &:focus {
+        outline: 2px solid var(--color-neutral-500);
+        outline-offset: 3px;
+      }
+    }
+
+    .removeImageButton {
+      text-decoration-line: underline;
+      text-underline-offset: 3px;
+    }
+  }
+
+  .input {
+    display: none;
+  }
+}
