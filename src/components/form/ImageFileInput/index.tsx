@@ -20,7 +20,7 @@ const ImageFileInput: React.FC<IImageFileInputProps> = ({
     const fileInputRef = React.createRef<HTMLInputElement>();
     const [isDragging, setIsDragging] = React.useState<boolean>(false);
     const [imageSrc, setImageSrc] = React.useState<string | null>(null);
-    const { control } = useFormContext();
+    const formContext = useFormContext();
 
     const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e
@@ -119,24 +119,34 @@ const ImageFileInput: React.FC<IImageFileInputProps> = ({
                     </div>
                 </>
             )}
-            <Controller control={control}
-                        rules={options}
-                        render={({ field }) => (
-                            <input className={styles.input}
-                                   type={'file'}
-                                   {...props}
-                                   accept={accept}
-                                   ref={fileInputRef}
-                                   onChange={(e) => {
-                                       field.onChange(e.target.files);
-                                       handleFileChange(e);
-                                   }}
-                                   onBlur={field.onBlur}
-                            />
-                        )}
-                        name={name}
-            >
-            </Controller>
+            {formContext ? (
+                <Controller control={formContext?.control}
+                            rules={options}
+                            render={({ field }) => (
+                                <input className={styles.input}
+                                       type={'file'}
+                                       {...props}
+                                       accept={accept}
+                                       ref={fileInputRef}
+                                       onChange={(e) => {
+                                           field.onChange(e.target.files);
+                                           handleFileChange(e);
+                                       }}
+                                       onBlur={field.onBlur}
+                                />
+                            )}
+                            name={name}
+                >
+                </Controller>
+            ) : (
+                <input className={styles.input}
+                       type={'file'}
+                       {...props}
+                       accept={accept}
+                       ref={fileInputRef}
+                       onChange={handleFileChange}
+                />
+            )}
         </button>
     );
 };

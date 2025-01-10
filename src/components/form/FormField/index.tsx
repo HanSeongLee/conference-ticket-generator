@@ -16,10 +16,10 @@ const FormField: React.FC<IFormFieldProps> = ({
                                                   label, name, info, error,
                                                   className, children, ...props
                                               }) => {
-    const { formState } = useFormContext();
+    const formContext = useFormContext();
 
-    const hasError = error || formState.errors[name];
-    const errorMessage = error || formState.errors[name]?.message as string;
+    const hasError = error || formContext?.formState.errors[name];
+    const errorMessage = error || formContext?.formState.errors[name]?.message as string;
 
     return (
         <div className={cn(styles.formField, className)}

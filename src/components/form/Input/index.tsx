@@ -14,15 +14,15 @@ const Input: React.FC<IInputProps> = ({
                                           name, options, error = false, className,
                                           ...props
                                       }) => {
-    const { register, formState } = useFormContext();
-    const hasError = error || formState.errors[name];
+    const formContext = useFormContext();
+    const hasError = error || formContext?.formState.errors[name];
 
     return (
         <input className={cn(styles.input, {
             [styles.error]: hasError,
         }, className)}
                {...props}
-               {...register(name, options)}
+               {...formContext?.register?.(name, options)}
         />
     );
 };
