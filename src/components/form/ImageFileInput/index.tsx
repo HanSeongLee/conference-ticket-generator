@@ -17,13 +17,13 @@ const ImageFileInput: React.FC<IImageFileInputProps> = ({
                                                             name, options, accept = '.jpg, .jpeg, .png', className,
                                                             ...props
                                                         }) => {
+    const buttonRef = React.createRef<HTMLButtonElement>();
     const fileInputRef = React.createRef<HTMLInputElement>();
     const [isDragging, setIsDragging] = React.useState<boolean>(false);
     const [imageSrc, setImageSrc] = React.useState<string | null>(null);
     const formContext = useFormContext();
 
-    const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e
+    const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement | HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>) => {
         e.stopPropagation();
         fileInputRef.current?.click();
     };
@@ -43,10 +43,12 @@ const ImageFileInput: React.FC<IImageFileInputProps> = ({
         }
     };
 
-    const resetFileInput = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const resetFileInput = (e: React.MouseEvent<HTMLButtonElement | HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>) => {
+        e.preventDefault();
         e.stopPropagation();
         setImageSrc(null);
         fileInputRef.current!.value = '';
+        buttonRef.current?.focus();
     };
 
     const handleDrop = (e: React.DragEvent<HTMLButtonElement>) => {
@@ -83,6 +85,7 @@ const ImageFileInput: React.FC<IImageFileInputProps> = ({
                 onClick={handleButtonClick}
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
+                ref={buttonRef}
         >
             {!imageSrc ? (
                 <>
@@ -104,18 +107,25 @@ const ImageFileInput: React.FC<IImageFileInputProps> = ({
                         />
                     </div>
                     <div className={styles.buttonContainer}>
-                        <button className={styles.removeImageButton}
-                                type={'button'}
-                                onClick={resetFileInput}
+                        <div className={styles.removeImageButton}
+                             role={'button'}
+                             tabIndex={0}
+                             onClick={resetFileInput}
+                             onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    resetFileInput(e);
+                                }
+                             }}
                         >
                             Remove image
-                        </button>
-                        <button className={styles.changeImageButton}
-                                type={'button'}
+                        </div>
+                        <div className={styles.changeImageButton}
+                                role={'button'}
+                                tabIndex={0}
                                 onClick={handleButtonClick}
                         >
                             Change image
-                        </button>
+                        </div>
                     </div>
                 </>
             )}
