@@ -1,0 +1,9 @@
+@import "@/styles/utils";
+
+.ticketGeneratorForm {
+  max-width: 522px;
+
+  @include media(">desktop") {
+    max-width: 480px;
+  }
+}
