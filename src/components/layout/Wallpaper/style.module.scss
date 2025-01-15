@@ -1,0 +1,49 @@
+@import "@/styles/utils";
+
+.wallpaper {
+  position: relative;
+  width: 100%;
+  min-height: 995px;
+  height: 100vh;
+  background-image: url("/imgs/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right -264px;
+  overflow: hidden;
+
+  @include media(">tablet") {
+    min-height: 1080px;
+    background-size: cover;
+    background-position: top center;
+  }
+
+  @include media(">desktop") {
+    min-height: 1100px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/svgs/line-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: 2724px 778px;
+    background-position: top center;
+    content: "";
+
+    @include media(">tablet") {
+      background-size: 1404px 778px;
+    }
+
+    @include media(">desktop") {
+      background-size: 1864px 1100px;
+    }
+  }
+
+  .container {
+    position: relative;
+
+  }
+}
