@@ -1,0 +1,110 @@
+@import "@/styles/utils";
+
+.container {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: -110px;
+    right: -233.1px;
+    width: 335.1px;
+    height: 233.1px;
+    background-image: url("/svgs/line-1.svg");
+    background-repeat: no-repeat;
+    background-size: 355.15px 233.1px;
+    content: "";
+
+    @include media(">tablet") {
+      top: -120px;
+      right: -494.85px;
+      width: 694.24px;
+      height: 482.85px;
+      background-size: 694.24px 482.85px;
+    }
+
+    @include media(">desktop") {
+      top: -190px;
+      right: -1154.62px;
+      width: 1334.62px;
+      height: 928.24px;
+      background-size: 1334.62px 928.24px;
+    }
+  }
+
+  .line2 {
+    position: absolute;
+    bottom: 0;
+    //bottom: -248px;
+    left: -556.7px;
+    width: 856.7px;
+    height: 465.71px;
+    background-image: url("/svgs/line-2.svg");
+    background-repeat: no-repeat;
+    background-size: 856.7px 465.71px;
+    z-index: 0;
+
+    @include media(">tablet") {
+      //bottom: -295px;
+      left: -750.09px;
+      width: 1127.09px;
+      height: 612.69px;
+      background-size: 1127.09px 612.69px;
+    }
+
+    @include media(">desktop") {
+      bottom: -475px;
+      left: -1185.2px;
+      width: 1825.2px;
+      height: 992.19px;
+      background-size: 1825.2px 992.19px;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    top: 450px;
+    right: -65px;
+    width: 107px;
+    height: 107px;
+    background-image: url("/svgs/circles.svg");
+    background-repeat: no-repeat;
+    background-size: 107px 107px;
+
+    @include media(">tablet") {
+      top: 420px;
+      right: -150px;
+      width: 217px;
+      height: 217px;
+      background-size: 217px 217px;
+    }
+
+    @include media(">desktop") {
+      top: 400px;
+      right: 0;
+    }
+  }
+
+  .wrapper {
+    position: relative;
+    min-height: 995px;
+
+    @include media(">tablet") {
+      min-height: 1080px;
+    }
+
+    @include media(">desktop") {
+      min-height: 1100px;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-250);
+  margin-bottom: var(--spacing-500);
+
+  @include media(">tablet") {
+    margin-bottom: 45px;
+  }
+}
