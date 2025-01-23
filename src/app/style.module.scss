@@ -109,3 +109,17 @@
     margin-bottom: 45px;
   }
 }
+
+.resultHeader {
+  gap: var(--spacing-250);
+  margin-bottom: 72px;
+
+  @include media(">tablet") {
+    gap: var(--spacing-400);
+    margin-bottom: 80px;
+  }
+
+  @include media(">desktop") {
+    margin-bottom: 111px;
+  }
+}

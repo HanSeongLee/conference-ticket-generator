@@ -8,6 +8,7 @@ import TicketGeneratorForm from '@/components/form/TicketGeneratorForm';
 import { FormProvider } from 'react-hook-form';
 import { useTicketGenerator } from '@/hooks/useTicketGenerator';
 import Ticket from '@/components/element/Ticket';
+import cn from 'classnames';
 
 export default function Home() {
     const { methods, onSubmit, ticketInfo } = useTicketGenerator({
@@ -43,7 +44,7 @@ export default function Home() {
                             </>
                         ) : (
                             <>
-                                <header className={styles.header}>
+                                <header className={cn(styles.header, styles.resultHeader)}>
                                     <Title color={'color-neutral-000'}
                                            align={'center'}
                                     >
