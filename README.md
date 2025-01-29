@@ -1,4 +1,4 @@
-# Frontend Mentor NextJS TS Template
+# Conference Ticket Generator
 ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/HanSeongLee/frontend-mentor-nextjs-ts-template)
 
 ![Next.JS:v15.0.3](https://img.shields.io/badge/v15.0.3-575757?logo=next.js&label=Next.js&labelColor=000000)
@@ -61,4 +61,4 @@ Here are some example commit messages that adhere to the convention:
 
 You can view the Storybook for this project on Chromatic:
 
-- [main](https://main--654f2c3d721586694df990a3.chromatic.com)
+- [main](https://main--6799f9e90db3a97fee0cf86b.chromatic.com/)
