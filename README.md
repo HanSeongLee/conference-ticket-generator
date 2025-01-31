@@ -1,7 +1,7 @@
 # Conference Ticket Generator
 ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/HanSeongLee/frontend-mentor-nextjs-ts-template)
 
-![Next.JS:v15.0.3](https://img.shields.io/badge/v15.0.3-575757?logo=next.js&label=Next.js&labelColor=000000)
+![Next.JS:v15.1.3](https://img.shields.io/badge/v15.1.3-575757?logo=next.js&label=Next.js&labelColor=000000)
 ![React:v18.3.1](https://img.shields.io/badge/v18.3.1-575757?logo=react&logoColor=000000&label=React&labelColor=61DAFB)
 ![TypeScript:v5.4.4](https://img.shields.io/badge/v5.4.4-575757?logo=typescript&logoColor=FFFFFF&label=TypeScript&labelColor=3178C6)
 ![Sass:v1.49.8](https://img.shields.io/badge/v1.49.8-575757?logo=sass&logoColor=FFFFFF&label=Sass&labelColor=CC6699)
